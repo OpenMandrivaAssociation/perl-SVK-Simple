@@ -2,7 +2,7 @@
 
 Name:		perl-%{realname}
 Version:        0.02
-Release:        %mkrel 7
+Release:        %mkrel 8
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:        Simple interface to svk
