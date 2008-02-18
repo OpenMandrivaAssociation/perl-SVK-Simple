@@ -5,7 +5,7 @@ Version:        0.02
 Release:        %mkrel 7
 License:	GPL or Artistic
 Group:		Development/Perl
-Summary:        This module is a simple interface to svk
+Summary:        Simple interface to svk
 Source0:        http://search.cpan.org/CPAN/authors/id/G/GU/GUGOD/%{realname}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{realname}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
