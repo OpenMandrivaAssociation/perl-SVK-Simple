@@ -1,20 +1,24 @@
-%define realname   SVK-Simple
+%define upstream_name    SVK-Simple
+%define upstream_version 0.03
 
-Name:		perl-%{realname}
-Version:        0.02
-Release:        %mkrel 11
-License:	GPL or Artistic
+Name:		perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Simple interface to svk
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Summary:        Simple interface to svk
-Source0:        http://search.cpan.org/CPAN/authors/id/G/GU/GUGOD/%{realname}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{realname}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://search.cpan.org/CPAN/authors/id/G/GU/GUGOD/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
-BuildRequires:  perl-Spiffy
-BuildRequires:  perl-SVK
+BuildRequires:  perl(Class::Field)
+BuildRequires:  perl(SVK)
+BuildRequires:  perl(Spiffy)
 BuildArch:      noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Although SVK.pm itself is already simple enough, there still are some misc 
@@ -23,7 +27,7 @@ helps people who wants to write some SVK applications. It provides a simple
 SVK object loader, so people will not have to handle XD initialization.
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
