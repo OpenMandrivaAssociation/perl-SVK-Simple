@@ -1,15 +1,13 @@
 %define upstream_name    SVK-Simple
-%define upstream_version 0.03
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.03
+Release:	6
 
 Summary:	Simple interface to svk
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/SVK-Simple
-Source0:	https://cpan.metacpan.org/authors/id/G/GU/GUGOD/SVK-Simple-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/G/GU/GUGOD/SVK-Simple-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -25,7 +23,7 @@ helps people who wants to write some SVK applications. It provides a simple
 SVK object loader, so people will not have to handle XD initialization.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -48,8 +46,7 @@ rm -rf %{buildroot}%{perl_vendorarch}
 * Fri Jul 24 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.30.0-1mdv2010.0
 + Revision: 399314
 - update to 0.03
-- using %%perl_convert_version
-- fixed license field
+- using %0.03 fixed license field
 
 * Thu Jul 31 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.02-11mdv2009.0
 + Revision: 258394
